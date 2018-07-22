@@ -24,8 +24,35 @@ python3 subtitles.py ex4.txt
 python3 subtitles.py ex5.txt
 ```
 
+# Known problems
+
+Ex3:
+
+Bad transitions:
+
+```
+157
+>> Just like how you were going to leave
+me.
+```
+
+If fix this:
+
+```
+154
+>> [Inaudible]
+```
+
+then cause this:
+
+```
+163
+>> What the f*** [CAR SPEEDS AWAY] [Music]
+```
+
 # Next steps
 
 1. Teach NLTK model to tokenize according to subs rules.
 2. Teach model to group hard related words on a same line.
 3. Do something with trashy code.
+

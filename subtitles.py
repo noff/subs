@@ -69,7 +69,8 @@ for row in rows:
     # Fix this: Fuck [CAR SPEEDS AWAY]
     # Fix this: Fuck [CAR SPEEDS AWAY] it
     # Here must be a better way to split this sentence to chunks
-    if '[' in row and not row[:2] == '>>': # Problems in ex3 in the end
+    # if '[' in row and not row[:2] == '>>': # Problems in ex3 in the end
+    if '[' in row:
         substrings = row.split('[')
         for substring in substrings:
             substring = substring.strip()
