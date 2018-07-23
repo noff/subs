@@ -71,25 +71,11 @@ for row in rows:
     # Here must be a better way to split this sentence to chunks
     # if '[' in row and not row[:2] == '>>': # Problems in ex3 in the end
     if '[' in row:
-        substrings = row.split('[')
+        substrings = row.replace('[', 'YSPLITTER[').replace(']', ']YSPLITTER').split('YSPLITTER')
         for substring in substrings:
             substring = substring.strip()
             if substring != '':
-                if ']' in substring:
-                    substring = '[' + substring
-                    if substring[len(substring) - 1] == ']':
-                        new_rows.append(substring)
-                    else:
-                        subsubstrings = substring.split(']')
-                        for subsubstring in subsubstrings:
-                            subsubstring = subsubstring.strip()
-                            if subsubstring != '':
-                                if '[' in subsubstring:
-                                    new_rows.append(subsubstring + ']')
-                                else:
-                                    new_rows.append(subsubstring)
-                else:
-                    new_rows.append(substring)
+                new_rows.append(substring)
     else:
         new_rows.append(row)
 
